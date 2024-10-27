@@ -44,10 +44,13 @@ function filterCategory(category) {
     });
 }
 
-function searchProducts(query) {
-    const products = document.querySelectorAll('.product');
-    products.forEach(product => {
-        const productName = product.querySelector('h3').textContent.toLowerCase();
-        product.style.display = productName.includes(query.toLowerCase()) ? 'inline-block' : 'none';
-    });
+function addComment(event, commentListId) {
+    if (event.key === 'Enter') {
+        const commentList = document.getElementById(commentListId);
+        const commentText = event.target.value;
+        const listItem = document.createElement('li');
+        listItem.textContent = commentText;
+        commentList.appendChild(listItem);
+        event.target.value = '';
+    }
 }

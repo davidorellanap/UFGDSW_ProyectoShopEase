@@ -17,15 +17,20 @@ nav ul {
     gap: 15px;
 }
 
-nav ul li {
-    color: #fff;
+#banner {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 15px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
 }
 
-section {
-    padding: 20px;
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-.category button {
+.tabs button {
     background-color: #6c757d;
     color: #fff;
     border: none;

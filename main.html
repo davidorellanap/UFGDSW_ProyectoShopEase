@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase - Tienda Online de Productos</title>
+    <title>ShopEase - Tienda Dinámica</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,42 +12,41 @@
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#categories">Categorías</a></li>
+                <li><a href="#products">Productos</a></li>
                 <li><a href="#contact">Contacto</a></li>
                 <li><button onclick="toggleCart()">🛒 Carrito</button></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>Bienvenido a ShopEase</h2>
-        <p>Encuentra tus productos favoritos y aprovecha nuestras ofertas.</p>
-        <input type="text" placeholder="Buscar productos..." oninput="searchProducts(this.value)">
+    <!-- Banner Promocional -->
+    <section id="banner">
+        <h2>Ofertas de Temporada</h2>
+        <p>Aprovecha hasta un 50% de descuento en artículos seleccionados.</p>
     </section>
 
-    <section id="categories">
-        <h2>Categorías de Productos</h2>
-        <div class="category">
+    <!-- Categorías con Pestañas -->
+    <section id="products">
+        <h2>Nuestros Productos</h2>
+        <div class="tabs">
             <button onclick="filterCategory('Tecnología')">Tecnología</button>
             <button onclick="filterCategory('Hogar')">Hogar</button>
             <button onclick="filterCategory('Moda')">Moda</button>
             <button onclick="filterCategory('Deportes')">Deportes</button>
         </div>
-    </section>
-
-    <section id="products">
-        <h2>Productos Destacados</h2>
-        <div class="product" data-category="Tecnología">
-            <h3>Producto de Tecnología 1</h3>
-            <p>Descripción breve de un artículo de tecnología.</p>
-            <button onclick="addToCart('Producto de Tecnología 1')">Añadir al Carrito</button>
+        <div class="product-list">
+            <div class="product" data-category="Tecnología">
+                <h3>Producto de Tecnología 1</h3>
+                <p>Descripción breve de un artículo de tecnología.</p>
+                <button onclick="addToCart('Producto de Tecnología 1')">Añadir al Carrito</button>
+                <div class="comments">
+                    <h4>Comentarios:</h4>
+                    <ul id="comments1"></ul>
+                    <input type="text" placeholder="Escribe un comentario..." onkeypress="addComment(event, 'comments1')">
+                </div>
+            </div>
+            <!-- Más productos aquí -->
         </div>
-        <div class="product" data-category="Hogar">
-            <h3>Producto de Hogar 1</h3>
-            <p>Descripción breve de un artículo para el hogar.</p>
-            <button onclick="addToCart('Producto de Hogar 1')">Añadir al Carrito</button>
-        </div>
-        <!-- Más productos con distintas categorías -->
     </section>
 
     <div id="cart-modal" class="cart-modal">

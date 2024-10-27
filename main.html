@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase - Tienda en Línea</title>
+    <title>ShopEase - Tienda Online de Productos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,38 +12,52 @@
         <nav>
             <ul>
                 <li><a href="#home">Inicio</a></li>
-                <li><a href="#products">Productos</a></li>
-                <li><a href="#cart">Carrito</a></li>
+                <li><a href="#categories">Categorías</a></li>
                 <li><a href="#contact">Contacto</a></li>
+                <li><button onclick="toggleCart()">🛒 Carrito</button></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
         <h2>Bienvenido a ShopEase</h2>
-        <p>Descubre nuestros productos y lleva tus compras al siguiente nivel.</p>
+        <p>Encuentra tus productos favoritos y aprovecha nuestras ofertas.</p>
+        <input type="text" placeholder="Buscar productos..." oninput="searchProducts(this.value)">
+    </section>
+
+    <section id="categories">
+        <h2>Categorías de Productos</h2>
+        <div class="category">
+            <button onclick="filterCategory('Tecnología')">Tecnología</button>
+            <button onclick="filterCategory('Hogar')">Hogar</button>
+            <button onclick="filterCategory('Moda')">Moda</button>
+            <button onclick="filterCategory('Deportes')">Deportes</button>
+        </div>
     </section>
 
     <section id="products">
         <h2>Productos Destacados</h2>
-        <div class="product">
-            <h3>Producto 1</h3>
-            <p>Descripción breve del producto.</p>
-            <button onclick="addToCart('Producto 1')">Añadir al Carrito</button>
+        <div class="product" data-category="Tecnología">
+            <h3>Producto de Tecnología 1</h3>
+            <p>Descripción breve de un artículo de tecnología.</p>
+            <button onclick="addToCart('Producto de Tecnología 1')">Añadir al Carrito</button>
         </div>
-        <div class="product">
-            <h3>Producto 2</h3>
-            <p>Descripción breve del producto.</p>
-            <button onclick="addToCart('Producto 2')">Añadir al Carrito</button>
+        <div class="product" data-category="Hogar">
+            <h3>Producto de Hogar 1</h3>
+            <p>Descripción breve de un artículo para el hogar.</p>
+            <button onclick="addToCart('Producto de Hogar 1')">Añadir al Carrito</button>
         </div>
-        <!-- Agrega más productos según sea necesario -->
+        <!-- Más productos con distintas categorías -->
     </section>
 
-    <section id="cart">
-        <h2>Carrito de Compras</h2>
-        <ul id="cart-items"></ul>
-        <button onclick="checkout()">Finalizar Compra</button>
-    </section>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Carrito de Compras</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="checkout()">Finalizar Compra</button>
+            <button onclick="toggleCart()">Cerrar</button>
+        </div>
+    </div>
 
     <footer id="contact">
         <p>Contacto: info@shopease.com | Teléfono: +503 1234 5678</p>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Tienda en Línea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>ShopEase</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#products">Productos</a></li>
+                <li><a href="#cart">Carrito</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Bienvenido a ShopEase</h2>
+        <p>Descubre nuestros productos y lleva tus compras al siguiente nivel.</p>
+    </section>
+
+    <section id="products">
+        <h2>Productos Destacados</h2>
+        <div class="product">
+            <h3>Producto 1</h3>
+            <p>Descripción breve del producto.</p>
+            <button onclick="addToCart('Producto 1')">Añadir al Carrito</button>
+        </div>
+        <div class="product">
+            <h3>Producto 2</h3>
+            <p>Descripción breve del producto.</p>
+            <button onclick="addToCart('Producto 2')">Añadir al Carrito</button>
+        </div>
+        <!-- Agrega más productos según sea necesario -->
+    </section>
+
+    <section id="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="checkout()">Finalizar Compra</button>
+    </section>
+
+    <footer id="contact">
+        <p>Contacto: info@shopease.com | Teléfono: +503 1234 5678</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -4,7 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopEase - Tienda en Línea</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #0d6efd;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+        }
+        #products, #testimonials, #blog {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product, .testimonial, .blog-entry {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        button {
+            background-color: #0d6efd;
+            color: #fff;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,13 +79,17 @@
             <ul>
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#products">Productos</a></li>
+                <li><a href="#testimonials">Testimonios</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Galería</a></li>
                 <li><a href="#cart">Carrito</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <section id="home">
+
         <h2>Bienvenido a ShopEase</h2>
         <p>Descubre nuestros productos y lleva tus compras al siguiente nivel.</p>
     </section>
@@ -37,6 +107,38 @@
             <button onclick="addToCart('Producto 2')">Añadir al Carrito</button>
         </div>
         <!-- Agrega más productos según sea necesario -->
+    </section>
+
+    <section id="testimonials">
+        <h2>Testimonios de Clientes</h2>
+        <div class="testimonial">
+            <p>"Excelente servicio y productos de calidad. ¡Siempre satisfecho!"</p>
+        </div>
+        <div class="testimonial">
+            <p>"Una experiencia de compra única. Totalmente recomendable."</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Últimas Noticias</h2>
+        <div class="blog-entry">
+            <h3>Entrada del Blog 1</h3>
+            <p>Resumen de la entrada...</p>
+        </div>
+        <div class="blog-entry">
+            <h3>Entrada del Blog 2</h3>
+            <p>Resumen de la entrada...</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Galería de Productos</h2>
+        <div class="gallery">
+            <img src="path_to_image1.jpg" alt="Imagen 1">
+            <img src="path_to_image2.jpg" alt="Imagen 2">
+            <img src="path_to_image3.jpg" alt="Imagen 3">
+            <img src="path_to_image4.jpg" alt="Imagen 4">
+        </div>
     </section>
 
     <section id="cart">

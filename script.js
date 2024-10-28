@@ -25,8 +25,21 @@ function checkout() {
     if (cart.length === 0) {
         alert("El carrito está vacío.");
     } else {
-        alert("Compra finalizada.");
+        alert("Compra finalizada. Gracias por su compra!");
         cart = [];
         displayCart();
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Este código se ejecutará cuando el documento esté completamente cargado
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#0056b3';
+        });
+        link.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '';
+        });
+    });
+});
